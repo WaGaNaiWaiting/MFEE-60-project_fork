@@ -4,24 +4,22 @@ import { useRouter, usePathname } from "next/navigation";
 
 export default function Breadcrumb() {
     const pathname = usePathname();
-    const pathes = pathname.split("/").filter(Boolean);
-
+    const pathSegments = pathname.split("/").filter(Boolean); // 分割網址並移除空值
     let fullPath = "";
 
+    // 麵包屑名稱對應表
     const breadcrumbNames = {
-        "activity": "活動列表",
-        "detail": "活動詳情"
+        activity: {
+            "": "活動列表", // activity 主分類名稱
+            detail: "活動詳情",
+        },
+        group: {
+            "": "揪團首頁", // group 主分類名稱
+            list:"揪團列表",
+            detail: "揪團詳情",
+            create: "創立新揪團",
+        },
     };
-
-    const breadcrumbItems = pathes.map((segment, index) => {
-        fullPath += `/${segment}`; // 每次迭代都加上新的路徑
-
-        return (
-            <li key={index} className="breadcrumb-item">
-                <Link className="a" href={fullPath}>{breadcrumbNames[segment]}</Link>
-            </li>
-        );
-    });
 
     return (
         <div className="bread container d-none d-sm-block">
@@ -32,7 +30,25 @@ export default function Breadcrumb() {
                             首頁
                         </a>
                     </li>
-                    {breadcrumbItems}
+                    {pathSegments.map((segment, index) => {
+                        fullPath += `/${segment}`; // 累積完整路徑
+
+                        const parent = pathSegments[0]; 
+                        const label = breadcrumbNames[parent]?.[segment] || breadcrumbNames[segment]?.[""] || segment;
+                        const isLast = index === pathSegments.length - 1; // 是否是最後一個
+
+                        return (
+                            <li key={index} className={`breadcrumb-item ${isLast ? "active" : ""}`}>
+                                {isLast ? (
+                                    <span>{label}</span> // 最後一個是文字，不加連結
+                                ) : (
+                                    <Link className="a" href={fullPath}>
+                                        {label}
+                                    </Link>
+                                )}
+                            </li>
+                        );
+                    })}
                 </ol>
             </nav>
         </div>

@@ -75,7 +75,7 @@ header {
 }
 
 /* 麵包屑 */
-.breadcrumb-list {
+body .breadcrumb-list {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 15px;
