@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { CartProvider } from "@/hooks/cartContext";
-import "../public/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../public/globals.css";
 // import 'bootstrap/dist/js/bootstrap.bundle.js';
 import Header from "./components/Header/header";
 import Footer from "./components/Footer/footer";
@@ -17,7 +17,7 @@ const notoSansTC = Noto_Sans_TC({
 });
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
+  variable: "--font-geist-sans",  
   subsets: ["latin"],
 });
 

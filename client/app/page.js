@@ -21,7 +21,7 @@ export default function Home() {
           <div
             className={`w-100 d-flex justify-content-between align-items-center`}
           >
-            <button className={`${styles.circleButton} d-none d-sm-block`}>
+            <button className={`${styles.circleButton} d-none d-sm-flex`}>
               <FaAngleLeft />
             </button>
             <div className="text-center w-100">
@@ -38,7 +38,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <button className={`${styles.circleButton} d-none d-sm-block`}>
+            <button className={`${styles.circleButton} d-none d-sm-flex`}>
               <FaAngleRight />
             </button>
           </div>
