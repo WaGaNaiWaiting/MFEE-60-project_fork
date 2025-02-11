@@ -1,0 +1,39 @@
+{
+  "name": "back-endexpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node api/index.js",
+    "dev": "nodemon api/index.js",
+    "debug": "DEBUG=express:* node ./api/index.js",
+    "debug-win": "set DEBUG=express:* & node ./api/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "express-session": "^1.18.0",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "public/*",
+      "node_modules/*",
+      "sessions/*"
+    ]
+  },
+  "engines": {
+    "node": ">= 16.0"
+  }
+}
