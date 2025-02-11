@@ -1,5 +1,5 @@
 function test(){
-  var aaa = 1234;
+  var aaa = "1234";
   if (aaa == 0){
     return true;
   }else{
@@ -9,4 +9,8 @@ function test(){
 
 function a(){
   return "abc";
+}
+
+function c(){
+  return "qqqq";
 }
