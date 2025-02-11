@@ -42,6 +42,7 @@
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  display: flex;
 }
 .circleIcon {
   background-color: #fff;
@@ -639,7 +640,7 @@
           top: 14px;
           left: 15px;
         }
-        &:hover {
+        /* &:hover {
           height: fit-content;
           transition: 0.5s;
           .cardText {
@@ -648,7 +649,7 @@
           .content {
             display: block;
           }
-        }
+        } */
       }
     }
     .btns {

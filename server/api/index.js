@@ -10,6 +10,7 @@ import createError from "http-errors";
 import productRouter from "../routes/products/index.js";
 import productDetailRouter from "../routes/products/detail.js";
 import favoritesRouter from "../routes/favorites/index.js";
+import activityRouter from "../routes/activity/index.js";
 // 建立 Express 應用程式
 const app = express();
 
@@ -43,6 +44,9 @@ apiRouter.use("/products", productDetailRouter); // 負責 `/api/products/:id`
 
 // 收藏相關路由
 apiRouter.use("/favorites", favoritesRouter); // 負責 `/api/favorites`
+
+// 活動相關路由
+apiRouter.use("/activity", activityRouter);
 
 // 捕捉 404 錯誤
 app.use((req, res, next) => {
